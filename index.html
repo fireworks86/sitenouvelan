@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouvel An 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #1b1b2f, #162447);
+      color: white;
+      text-align: center;
+    }
+    #countdown {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    #message {
+      display: none;
+      font-size: 2.5rem;
+      color: #FFD700;
+      animation: fade-in 2s ease-in-out;
+    }
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div id="countdown">00:00:00</div>
+    <div id="message">🎉 
+        <p>Voilà, il est 00:00, on est en 2025.</p>
+        <p>Et tu n’es pas seulement ma meilleure rencontre de 2024, tu es <strong>LA meilleure rencontre possible</strong> que j'aurais pu faire dans toute cette vie.</p>
+      
+        <p>Tu es devenue ma raison de vivre en si peu de temps, et je souhaite que ça reste ainsi pour toujours.  
+        Je vois les étoiles dans ton regard, le ciel bleu, le ciel parfait quand je vois ta peau.</p>
+      
+        <p>Depuis le <strong>26 septembre</strong>, je t’aime, et je veux finir ma vie à tes côtés.  
+        Même si, parfois, je te fais bien souvent chier, c’est uniquement par peur de te perdre.</p>
+      
+        <p>Je ne me vois pas vivre sans toi.  
+        Je lâcherais tout pour toi, car tu es comme ma seconde vie, seconde vie que je veux finir avec toi.</p>
+      
+        <p>Le feeling est passé sans forcer, directement, comme un instinct.  
+        Comme si c’était prévu, comme si c’était déjà écrit.</p>
+      
+        <p>Nous avons passé à peine deux semaines sans nous voir,  
+        et j’ai l’impression que ça fait une éternité.  
+        Tu me manques.</p>
+      
+        <p>J’adore être dans tes bras.  
+        Tu es mon bonheur.  
+        <strong>Mon bonheur à moi.</strong></p>
+      
+        <p>Tout ça pour te souhaiter une joyeuse année.  
+        J’espère du fond du cœur que tu passes une merveilleuse année 2025.  
+        J’ose espérer qu’elle sera un peu meilleure pour moi aussi…  
+        Mais tant que je suis à tes côtés, tout ira bien !</p>
+      
+        <p>Toutes ces lignes… Et pourtant je ne suis pas écrivain.  
+        En plus, j’écris ce texte à 19h le soir-même.</p>
+      
+        <p>Pourquoi ? Parce que ton futur mari, tellement intelligent, a reset le PC qui buggait trop…  
+        Sans se rappeler que le texte n’était pas sur le téléphone, mais bien sur l’ordinateur.  
+        C’est donc, en quelque sorte, une course contre la montre. 😊</p>
+      
+        <p>En tout cas, je te laisse profiter avec tes copines,  
+        et de mon côté, j’attends <strong>mon texte</strong>. 😊</p>🎉</div>
+  </div>
+
+  <script>
+    function startCountdown() {
+      const targetDate = new Date('January 1, 2025 00:00:00').getTime();
+
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          document.getElementById('countdown').style.display = 'none';
+          document.getElementById('message').style.display = 'block';
+          return;
+        }
+
+        const hours = String(Math.floor((timeLeft / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+        const minutes = String(Math.floor((timeLeft / (1000 * 60)) % 60)).padStart(2, '0');
+        const seconds = String(Math.floor((timeLeft / 1000) % 60)).padStart(2, '0');
+
+        document.getElementById('countdown').textContent = `${hours}:${minutes}:${seconds}`;
+      }, 1000);
+    }
+
+    startCountdown();
+  </script>
+</body>
+</html>
